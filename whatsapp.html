@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Real Look Cosmetics Store - Order Form</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f5f5;
+padding:20px;
+}
+
+.container{
+max-width:420px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+margin:auto;
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:5px;
+font-size:14px;
+}
+
+button{
+background:#25D366;
+color:white;
+padding:14px;
+border:none;
+width:100%;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Real Look Cosmetics Order</h2>
+
+<input id="name" type="text" placeholder="Customer Name">
+
+<input id="phone" type="tel" placeholder="Mobile Number">
+
+<textarea id="address" placeholder="Delivery Address"></textarea>
+
+<select id="category">
+<option>Undergarments</option>
+<option>Artificial Jewellery</option>
+<option>Beauty Parlour Products</option>
+<option>Cosmetics</option>
+</select>
+
+<input id="product" type="text" placeholder="Product Name">
+
+<input id="qty" type="number" placeholder="Quantity">
+
+<select id="payment">
+<option>Cash on Delivery</option>
+<option>UPI</option>
+<option>Pay at Store</option>
+</select>
+
+<button onclick="sendOrder()">Place Order on WhatsApp</button>
+
+</div>
+
+<script>
+
+function sendOrder(){
+
+var name=document.getElementById("name").value;
+var phone=document.getElementById("phone").value;
+var address=document.getElementById("address").value;
+var category=document.getElementById("category").value;
+var product=document.getElementById("product").value;
+var qty=document.getElementById("qty").value;
+var payment=document.getElementById("payment").value;
+
+var message="*Real Look Cosmetics Store Order*%0A%0A"
++"Name: "+name+"%0A"
++"Phone: "+phone+"%0A"
++"Address: "+address+"%0A"
++"Category: "+category+"%0A"
++"Product: "+product+"%0A"
++"Quantity: "+qty+"%0A"
++"Payment: "+payment;
+
+var url="https://wa.me/919872768122?text="+message;
+
+window.open(url,'_blank');
+
+}
+
+</script>
+
+</body>
+</html>
